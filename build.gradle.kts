@@ -2,11 +2,15 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     kotlin("jvm") version "1.3.72"
+    id("com.vanniktech.maven.publish") version "0.11.1" apply false
 }
 
 allprojects {
-    group = "com.veyndan.vamp"
-    version = "0.1.0"
+    @Suppress("LocalVariableName") val GROUP: String by this
+    @Suppress("LocalVariableName") val VERSION_NAME: String by this
+
+    group = GROUP
+    version = VERSION_NAME
 
     repositories {
         jcenter()
