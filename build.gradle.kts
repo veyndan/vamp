@@ -11,7 +11,7 @@ allprojects {
     version = VERSION_NAME
 
     repositories {
-        jcenter()
+        mavenCentral()
     }
 
     apply(plugin = "java")
