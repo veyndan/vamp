@@ -1,7 +1,5 @@
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-
 plugins {
-    kotlin("jvm") version "1.4.21"
+    kotlin("jvm") version "1.5.10"
     id("com.vanniktech.maven.publish") version "0.11.1" apply false
 }
 
@@ -17,13 +15,4 @@ allprojects {
     }
 
     apply(plugin = "java")
-
-    java {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    tasks.withType<KotlinCompile>().configureEach {
-        kotlinOptions.jvmTarget = JavaVersion.VERSION_1_8.toString()
-    }
 }
