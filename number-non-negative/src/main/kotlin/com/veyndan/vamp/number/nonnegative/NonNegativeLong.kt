@@ -7,7 +7,8 @@ package com.veyndan.vamp.number.nonnegative
  *
  * The name `NaturalNumber` was not used due to the ambiguity of the allowable range including or excluding zero.
  */
-class NonNegativeLong @PublishedApi internal constructor(@PublishedApi internal val data: Long) : Comparable<NonNegativeLong> {
+@JvmInline
+value class NonNegativeLong @PublishedApi internal constructor(@PublishedApi internal val data: Long) : Comparable<NonNegativeLong> {
 
     companion object {
 
@@ -128,14 +129,6 @@ class NonNegativeLong @PublishedApi internal constructor(@PublishedApi internal 
     fun toDouble(): Double = data.toDouble()
 
     override fun toString(): String = data.toString()
-
-    override fun equals(other: Any?): Boolean = when {
-        this === other -> true
-        other is NonNegativeLong -> data == other.data
-        else -> false
-    }
-
-    override fun hashCode(): Int = data.hashCode()
 }
 
 /**
